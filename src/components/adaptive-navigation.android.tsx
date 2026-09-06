@@ -13,7 +13,12 @@ export default function AdaptiveNavigation({ children }: AdaptiveNavigationProps
   return (
     <View style={styles.container}>
       <Host style={styles.rail}>
-        <AdaptiveNavigationComposeView selectedTab={selectedTab} />
+        <AdaptiveNavigationComposeView
+          selectedTab={selectedTab}
+          onTabPress={(name) => {
+            console.log('Rail pressed: ', name);
+          }}
+        />
       </Host>
       <View style={styles.content}>{children(false)}</View>
     </View>
