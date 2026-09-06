@@ -8,7 +8,7 @@ export default function AdaptiveNavigation({ children }: AdaptiveNavigationProps
   return (
     <View style={styles.container}>
       <Host style={styles.rail}>
-        <AdaptiveNavigationComposeView title="Native rail" />
+        <AdaptiveNavigationComposeView selectedTab="(shelf)" />
       </Host>
       <View style={styles.content}>{children(false)}</View>
     </View>
