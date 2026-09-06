@@ -1,24 +1,17 @@
 import { StyleSheet, View } from 'react-native';
 import { Host } from '@expo/ui';
-import { useSegments } from 'expo-router';
 
+import { useAppTabNavigation } from '@/hooks/use-app-tab-navigation';
 import type { AdaptiveNavigationProps } from '@/types/adaptive-navigation.types';
 import AdaptiveNavigationComposeView from '../../modules/adaptive-navigation/src/AdaptiveNavigationComposeView';
 
 export default function AdaptiveNavigation({ children }: AdaptiveNavigationProps) {
-  const [firstSegment] = useSegments();
-  const selectedTab =
-    firstSegment === 'search' || firstSegment === 'settings' ? firstSegment : '(shelf)';
+  const { selectedTab, selectTab } = useAppTabNavigation();
 
   return (
     <View style={styles.container}>
       <Host style={styles.rail}>
-        <AdaptiveNavigationComposeView
-          selectedTab={selectedTab}
-          onTabPress={(name) => {
-            console.log('Rail pressed: ', name);
-          }}
-        />
+        <AdaptiveNavigationComposeView selectedTab={selectedTab} onTabPress={selectTab} />
       </Host>
       <View style={styles.content}>{children(false)}</View>
     </View>
