@@ -23,7 +23,7 @@ export default function AdaptiveNavigation({ children }: AdaptiveNavigationProps
         </Host>
       </View>
       <View style={[styles.content, { marginLeft: showRail ? RAIL_WIDTH : 0 }]}>
-        {children(false)}
+        {children(showRail)}
       </View>
     </View>
   );
