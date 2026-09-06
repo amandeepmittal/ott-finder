@@ -1,13 +1,20 @@
 import { requireNativeView } from 'expo';
 
+export type NavigationMode = 'rail' | 'bar';
+
 export type AppTabName = '(shelf)' | 'search' | 'settings';
 
 export type AdaptiveNavigationComposeViewProps = {
   selectedTab: AppTabName;
+  onNavigationModeChange: (mode: NavigationMode) => void;
   onTabPress: (name: AppTabName) => void;
 };
 
-type NativeProps = Omit<AdaptiveNavigationComposeViewProps, 'onTabPress'> & {
+type NativeProps = Omit<
+  AdaptiveNavigationComposeViewProps,
+  'onTabPress' | 'onNavigationModeChange'
+> & {
+  onNavigationModeChange: (event: { nativeEvent: { mode: NavigationMode } }) => void;
   onTabPress: (event: { nativeEvent: { name: AppTabName } }) => void;
 };
 
@@ -18,7 +25,14 @@ const NativeRail = requireNativeView<NativeProps>(
 
 export default function AdaptiveNavigationComposeView({
   onTabPress,
+  onNavigationModeChange,
   ...props
 }: AdaptiveNavigationComposeViewProps) {
-  return <NativeRail {...props} onTabPress={({ nativeEvent }) => onTabPress(nativeEvent.name)} />;
+  return (
+    <NativeRail
+      {...props}
+      onTabPress={({ nativeEvent }) => onTabPress(nativeEvent.name)}
+      onNavigationModeChange={({ nativeEvent }) => onNavigationModeChange(nativeEvent.mode)}
+    />
+  );
 }

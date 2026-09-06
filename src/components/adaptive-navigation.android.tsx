@@ -1,15 +1,19 @@
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Host } from '@expo/ui';
 
 import { useAppTabNavigation } from '@/hooks/use-app-tab-navigation';
 import type { AdaptiveNavigationProps } from '@/types/adaptive-navigation.types';
-import AdaptiveNavigationComposeView from '../../modules/adaptive-navigation/src/AdaptiveNavigationComposeView';
+import AdaptiveNavigationComposeView, {
+  type NavigationMode,
+} from '../../modules/adaptive-navigation/src/AdaptiveNavigationComposeView';
 
 const RAIL_WIDTH = 96;
 
 export default function AdaptiveNavigation({ children }: AdaptiveNavigationProps) {
   const { selectedTab, selectTab } = useAppTabNavigation();
-  const showRail = true;
+  const [navigationMode, setNavigationMode] = useState<NavigationMode>('bar');
+  const showRail = navigationMode === 'rail';
 
   return (
     <View style={styles.container}>
@@ -19,7 +23,14 @@ export default function AdaptiveNavigation({ children }: AdaptiveNavigationProps
         importantForAccessibility={showRail ? 'auto' : 'no-hide-descendants'}
       >
         <Host style={styles.host}>
-          <AdaptiveNavigationComposeView selectedTab={selectedTab} onTabPress={selectTab} />
+          <AdaptiveNavigationComposeView
+            selectedTab={selectedTab}
+            onTabPress={selectTab}
+            onNavigationModeChange={(mode) => {
+              console.log('Navigation mode:', mode);
+              setNavigationMode(mode);
+            }}
+          />
         </Host>
       </View>
       <View style={[styles.content, { marginLeft: showRail ? RAIL_WIDTH : 0 }]}>

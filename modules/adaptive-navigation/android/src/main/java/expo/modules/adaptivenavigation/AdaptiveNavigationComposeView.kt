@@ -1,4 +1,7 @@
-@file:OptIn(androidx.compose.material3.ExperimentalMaterial3ExpressiveApi::class)
+@file:OptIn(
+  androidx.compose.material3.ExperimentalMaterial3ExpressiveApi::class,
+  androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi::class
+)
 
 package expo.modules.adaptivenavigation
 
@@ -14,6 +17,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.WideNavigationRail
 import androidx.compose.material3.WideNavigationRailItem
+import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
+import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
+import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -41,8 +48,23 @@ private val destinations = listOf(
 @Composable
 fun FunctionalComposableScope.AdaptiveNavigationComposeViewContent(
   props: AdaptiveNavigationComposeViewProps,
-  onTabPress: (String) -> Unit = {}
+  onTabPress: (String) -> Unit,
+  onNavigationModeChange: (String) -> Unit
 ) {
+  val adaptiveInfo = currentWindowAdaptiveInfo()
+  val suggestedType = NavigationSuiteScaffoldDefaults.navigationSuiteType(adaptiveInfo)
+  val mode = when (suggestedType) {
+    NavigationSuiteType.NavigationRail,
+    NavigationSuiteType.WideNavigationRailCollapsed,
+    NavigationSuiteType.WideNavigationRailExpanded -> "rail"
+    else -> "bar"
+  }
+
+  // Send the initial mode, then send again only when the decision changes.
+  LaunchedEffect(mode) {
+    onNavigationModeChange(mode)
+  }
+
   WideNavigationRail(modifier = Modifier.fillMaxSize()) {
     destinations.forEach { destination ->
       val selected = props.selectedTab == destination.name
