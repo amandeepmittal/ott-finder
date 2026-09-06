@@ -35,9 +35,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   rail: {
-    width: 96,
-    backgroundColor: '#E0E1E6',
-    paddingTop: 64,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: RAIL_WIDTH,
   },
   content: {
     flex: 1,
