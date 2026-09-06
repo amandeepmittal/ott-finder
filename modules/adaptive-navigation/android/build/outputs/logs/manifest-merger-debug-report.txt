@@ -1,0 +1,14 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/amanhimself/Desktop/Projects/ott-finder/modules/adaptive-navigation/android/src/main/AndroidManifest.xml:1:1-2:12
+INJECTED from /Users/amanhimself/Desktop/Projects/ott-finder/modules/adaptive-navigation/android/src/main/AndroidManifest.xml:1:1-2:12
+	package
+		INJECTED from /Users/amanhimself/Desktop/Projects/ott-finder/modules/adaptive-navigation/android/src/main/AndroidManifest.xml
+uses-sdk
+INJECTED from /Users/amanhimself/Desktop/Projects/ott-finder/modules/adaptive-navigation/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/amanhimself/Desktop/Projects/ott-finder/modules/adaptive-navigation/android/src/main/AndroidManifest.xml
+INJECTED from /Users/amanhimself/Desktop/Projects/ott-finder/modules/adaptive-navigation/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/amanhimself/Desktop/Projects/ott-finder/modules/adaptive-navigation/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/amanhimself/Desktop/Projects/ott-finder/modules/adaptive-navigation/android/src/main/AndroidManifest.xml

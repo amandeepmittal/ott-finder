@@ -1,13 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Host } from '@expo/ui';
 
 import type { AdaptiveNavigationProps } from '@/types/adaptive-navigation.types';
+import AdaptiveNavigationComposeView from '../../modules/adaptive-navigation/src/AdaptiveNavigationComposeView';
 
 export default function AdaptiveNavigation({ children }: AdaptiveNavigationProps) {
   return (
     <View style={styles.container}>
-      <View style={styles.rail}>
-        <Text>Rail goes here</Text>
-      </View>
+      <Host style={styles.rail}>
+        <AdaptiveNavigationComposeView title="Native rail" />
+      </Host>
       <View style={styles.content}>{children(false)}</View>
     </View>
   );
