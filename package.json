@@ -47,7 +47,9 @@
     "lint:fix": "expo lint . --fix --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "bun run lint && bun run format:check"
+    "check": "bun run lint && bun run format:check",
+    "android:phone": "expo run:android --device Medium_Phone",
+    "android:fold": "expo run:android --device Pixel_10_Pro_Fold"
   },
   "private": true
 }
