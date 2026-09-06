@@ -1,0 +1,10 @@
+.expo/
+android/
+ios/
+dist/
+web-build/
+coverage/
+example/
+assets/expo.icon/
+bun.lock
+expo-env.d.ts

@@ -1,10 +1,9 @@
 import type { ReactNode } from 'react';
-import { View, StyleSheet } from 'react-native';
-
-import { ThemedText } from './themed-text';
-import { ThemedView } from './themed-view';
+import { StyleSheet, View } from 'react-native';
 
 import { Spacing } from '@/constants/theme';
+import { ThemedText } from './themed-text';
+import { ThemedView } from './themed-view';
 
 type HintRowProps = {
   title?: string;

@@ -37,9 +37,22 @@ This command will move the starter code to the **app-example** directory and cre
 
 ### Other setup steps
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
 - If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
 - Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+
+### Code quality
+
+Install the recommended ESLint and Prettier editor extensions. Saving a file applies ESLint fixes, removes unused imports, and formats it with Prettier. Prettier owns import sorting and preserves side-effect import order.
+
+```bash
+bun run lint          # Check code, including warnings
+bun run lint:fix      # Apply automatic fixes and remove unused imports
+bun run format       # Format files and sort imports
+bun run format:check # Check formatting without changing files
+bun run check        # Run both checks
+```
+
+The setup extends Expo's SDK 57 ESLint config and adapts the automatic cleanup and strict checks from [Christoph Nakazawa's ESLint config](https://github.com/nkzw-tech/eslint-config). Prettier runs separately from ESLint. Generated native projects, build outputs, and the Bun lockfile are excluded from formatting.
 
 ## Learn more
 
