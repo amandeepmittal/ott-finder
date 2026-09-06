@@ -6,6 +6,9 @@ export type AppTabName = '(shelf)' | 'search' | 'settings';
 
 export type AdaptiveNavigationComposeViewProps = {
   selectedTab: AppTabName;
+  backgroundColor: string;
+  contentColor: string;
+  indicatorColor: string;
   onNavigationModeChange: (mode: NavigationMode) => void;
   onTabPress: (name: AppTabName) => void;
 };
