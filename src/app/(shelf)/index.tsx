@@ -1,9 +1,13 @@
-import { Text, View } from 'react-native';
+import { Stack } from 'expo-router';
+
+import TitleList from '@/components/title-list';
+import { titles } from '@/data/catalog';
 
 export default function ShelfScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Shelf</Text>
-    </View>
+    <>
+      <Stack.Screen options={{ headerShown: false }} />
+      <TitleList heading="Shelf" items={titles} topInset />
+    </>
   );
 }
