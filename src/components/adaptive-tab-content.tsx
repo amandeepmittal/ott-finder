@@ -1,5 +1,5 @@
 import { useContext, type PropsWithChildren } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native';
 import { useTheme } from 'expo-router';
 import { SafeAreaView } from 'react-native-screens/experimental';
 
@@ -20,7 +20,9 @@ export default function AdaptiveTabContent({ children }: PropsWithChildren) {
         edges={{ bottom: true }}
         insetType={showRail ? 'system' : 'all'}
       >
-        {children}
+        <KeyboardAvoidingView behavior="padding" style={styles.content}>
+          {children}
+        </KeyboardAvoidingView>
       </SafeAreaView>
     </View>
   );

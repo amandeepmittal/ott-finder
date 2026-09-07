@@ -87,13 +87,20 @@ fun FunctionalComposableScope.AdaptiveNavigationComposeViewContent(
           "bottom" to hinge.bounds.bottom / density
         )
       }
-    val hasHorizontalHinge = posture.hingeList.any {
-      !it.isVertical && (it.isSeparating || it.isOccluding)
-    }
+    val horizontalHinges = posture.hingeList
+      .filter { !it.isVertical && (it.isSeparating || it.isOccluding) }
+      .map { hinge ->
+        mapOf(
+          "left" to hinge.bounds.left / density,
+          "top" to hinge.bounds.top / density,
+          "right" to hinge.bounds.right / density,
+          "bottom" to hinge.bounds.bottom / density
+        )
+      }
     onWindowFeaturesChange(
       mapOf(
         "verticalHinges" to verticalHinges,
-        "hasHorizontalHinge" to hasHorizontalHinge
+        "horizontalHinges" to horizontalHinges
       )
     )
   }

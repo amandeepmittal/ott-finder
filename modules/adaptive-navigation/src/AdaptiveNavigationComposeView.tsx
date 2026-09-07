@@ -1,18 +1,8 @@
 import { requireNativeView } from 'expo';
 
+import { isValidHinge, type PaneWindowFeatures } from '../../../src/utils/pane-geometry';
+
 export type NavigationMode = 'rail' | 'bar';
-
-export type WindowHinge = {
-  left: number;
-  top: number;
-  right: number;
-  bottom: number;
-};
-
-export type PaneWindowFeatures = {
-  verticalHinges: WindowHinge[];
-  hasHorizontalHinge: boolean;
-};
 
 export type AppTabName = '(shelf)' | 'search' | 'settings';
 
@@ -31,7 +21,9 @@ type NativeProps = Omit<
   'onTabPress' | 'onNavigationModeChange' | 'onWindowFeaturesChange'
 > & {
   onNavigationModeChange: (event: { nativeEvent: { mode: NavigationMode } }) => void;
-  onWindowFeaturesChange: (event: { nativeEvent: PaneWindowFeatures }) => void;
+  onWindowFeaturesChange: (event: {
+    nativeEvent: { verticalHinges: unknown; horizontalHinges: unknown };
+  }) => void;
   onTabPress: (event: { nativeEvent: { name: AppTabName } }) => void;
 };
 
@@ -51,7 +43,16 @@ export default function AdaptiveNavigationComposeView({
       {...props}
       onTabPress={({ nativeEvent }) => onTabPress(nativeEvent.name)}
       onNavigationModeChange={({ nativeEvent }) => onNavigationModeChange(nativeEvent.mode)}
-      onWindowFeaturesChange={({ nativeEvent }) => onWindowFeaturesChange(nativeEvent)}
+      onWindowFeaturesChange={({ nativeEvent }) =>
+        onWindowFeaturesChange({
+          verticalHinges: Array.isArray(nativeEvent.verticalHinges)
+            ? nativeEvent.verticalHinges.filter(isValidHinge)
+            : [],
+          horizontalHinges: Array.isArray(nativeEvent.horizontalHinges)
+            ? nativeEvent.horizontalHinges.filter(isValidHinge)
+            : [],
+        })
+      }
     />
   );
 }

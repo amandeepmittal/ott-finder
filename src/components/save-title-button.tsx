@@ -1,6 +1,8 @@
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useTheme } from 'expo-router';
 
+import ShelfAction from '@/components/shelf-action';
+import { Spacing, Typography } from '@/constants/theme';
 import { useShelf } from '@/contexts/shelf-context';
 
 export default function SaveTitleButton({ id }: { id: string }) {
@@ -8,27 +10,10 @@ export default function SaveTitleButton({ id }: { id: string }) {
   const { colors } = useTheme();
 
   return (
-    <View style={{ gap: 12 }}>
-      <Pressable
-        accessibilityRole="button"
-        accessibilityState={{ disabled: !ready }}
-        disabled={!ready}
-        onPress={() => toggleSaved(id)}
-        style={({ pressed }) => ({
-          borderColor: colors.primary,
-          borderWidth: 1,
-          borderRadius: 12,
-          padding: 16,
-          alignSelf: 'flex-start',
-          opacity: pressed || !ready ? 0.5 : 1,
-        })}
-      >
-        <Text style={{ color: colors.primary, fontWeight: '600' }}>
-          {isSaved(id) ? 'Remove from Shelf' : 'Save to Shelf'}
-        </Text>
-      </Pressable>
+    <View style={{ gap: Spacing.two }}>
+      <ShelfAction saved={isSaved(id)} disabled={!ready} onPress={() => toggleSaved(id)} />
       {!!error && (
-        <Text accessibilityRole="alert" style={{ color: colors.text }}>
+        <Text accessibilityRole="alert" style={[Typography.caption, { color: colors.text }]}>
           {error}
         </Text>
       )}

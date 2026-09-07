@@ -1,10 +1,10 @@
 import { createContext } from 'react';
 
-import type { PaneWindowFeatures } from '../../modules/adaptive-navigation/src/AdaptiveNavigationComposeView';
+import type { PaneWindowFeatures } from '@/utils/pane-geometry';
 
 export const EMPTY_WINDOW_FEATURES: PaneWindowFeatures = {
   verticalHinges: [],
-  hasHorizontalHinge: false,
+  horizontalHinges: [],
 };
 
 export const PaneWindowContext = createContext(EMPTY_WINDOW_FEATURES);

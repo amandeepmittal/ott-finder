@@ -25,7 +25,7 @@ export default function SearchDetailsScreen() {
   return (
     <>
       <Stack.Screen options={{ title: title.title }} />
-      <TitleDetails title={title} />
+      <TitleDetails key={title.id} title={title} />
     </>
   );
 }

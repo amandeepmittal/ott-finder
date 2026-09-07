@@ -25,7 +25,7 @@ export default function ShelfDetailsScreen() {
   return (
     <>
       <Stack.Screen options={{ title: title.title }} />
-      <TitleDetails title={title} />
+      <TitleDetails key={title.id} title={title} />
     </>
   );
 }

@@ -1,7 +1,8 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useTheme } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { Colors, Radius, Spacing, Typography } from '@/constants/theme';
 import { metadata, type Title } from '@/data/catalog';
 
 type Props = {
@@ -21,7 +22,8 @@ export default function TitleList({
   topInset = false,
   emptyMessage = 'Your Shelf is empty.',
 }: Props) {
-  const { colors } = useTheme();
+  const { colors, dark } = useTheme();
+  const palette = Colors[dark ? 'dark' : 'light'];
   const insets = useSafeAreaInsets();
 
   return (
@@ -40,7 +42,9 @@ export default function TitleList({
         extraData={selectedId}
         contentContainerStyle={styles.list}
         keyboardShouldPersistTaps="handled"
-        ListEmptyComponent={<Text style={{ color: colors.text }}>{emptyMessage}</Text>}
+        ListEmptyComponent={
+          <Text style={[Typography.body, { color: palette.textSecondary }]}>{emptyMessage}</Text>
+        }
         renderItem={({ item }) => (
           <Pressable
             disabled={!onSelect}
@@ -48,25 +52,32 @@ export default function TitleList({
             accessibilityRole={onSelect ? 'button' : undefined}
             accessibilityLabel={item.title}
             accessibilityState={{ selected: selectedId === item.id }}
+            android_ripple={{ color: `${palette.text}14` }}
             style={({ pressed }) => [
               styles.row,
               {
-                backgroundColor: selectedId === item.id ? colors.card : colors.background,
-                borderColor: selectedId === item.id ? colors.primary : colors.border,
-                opacity: pressed ? 0.7 : 1,
+                backgroundColor:
+                  selectedId === item.id ? palette.backgroundSelected : palette.backgroundElement,
+                opacity: pressed && Platform.OS !== 'android' ? 0.7 : 1,
               },
             ]}
           >
-            <View style={[styles.poster, { backgroundColor: colors.card }]}>
+            <View style={[styles.poster, { backgroundColor: colors.background }]}>
               <Text style={[styles.initials, { color: colors.primary }]}>
                 {item.title.slice(0, 2).toUpperCase()}
               </Text>
-              <Text style={{ color: colors.text }}>{item.mediaType === 'tv' ? 'TV' : 'FILM'}</Text>
+              <Text style={[Typography.caption, { color: palette.textSecondary }]}>
+                {item.mediaType === 'tv' ? 'TV' : 'FILM'}
+              </Text>
             </View>
             <View style={styles.copy}>
               <Text style={[styles.title, { color: colors.text }]}>{item.title}</Text>
-              <Text style={{ color: colors.text }}>{metadata(item)}</Text>
-              <Text style={{ color: colors.text }}>★ {item.rating.toFixed(1)}</Text>
+              <Text style={[Typography.caption, { color: palette.textSecondary }]}>
+                {metadata(item)}
+              </Text>
+              <Text style={[Typography.caption, { color: palette.textSecondary }]}>
+                ★ {item.rating.toFixed(1)}
+              </Text>
             </View>
           </Pressable>
         )}
@@ -80,43 +91,45 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   heading: {
-    fontSize: 28,
-    fontWeight: '700',
-    paddingHorizontal: 20,
-    paddingVertical: 16,
+    ...Typography.heading,
+    paddingHorizontal: Spacing.three,
+    paddingVertical: Spacing.three,
   },
   list: {
-    paddingHorizontal: 16,
-    paddingBottom: 20,
-    gap: 12,
+    paddingHorizontal: Spacing.three,
+    paddingBottom: Spacing.four,
+    gap: Spacing.two,
     flexGrow: 1,
   },
   row: {
     flexDirection: 'row',
-    gap: 14,
-    padding: 12,
-    borderWidth: 1,
-    borderRadius: 16,
+    alignItems: 'center',
+    gap: Spacing.three,
+    padding: Spacing.three,
+    borderRadius: Radius.large,
+    borderCurve: 'continuous',
   },
   poster: {
-    width: 64,
-    height: 92,
-    borderRadius: 10,
+    width: 48,
+    minHeight: 72,
+    flexShrink: 0,
+    paddingVertical: Spacing.two,
+    borderRadius: Radius.small,
+    borderCurve: 'continuous',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 8,
+    gap: Spacing.one,
   },
   initials: {
-    fontSize: 22,
-    fontWeight: '700',
+    ...Typography.section,
   },
   copy: {
     flex: 1,
+    minWidth: 0,
     justifyContent: 'center',
-    gap: 6,
+    gap: Spacing.one,
   },
   title: {
-    fontSize: 17,
-    fontWeight: '600',
+    ...Typography.title,
   },
 });

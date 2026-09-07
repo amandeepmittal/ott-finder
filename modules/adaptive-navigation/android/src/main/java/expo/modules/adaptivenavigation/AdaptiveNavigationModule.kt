@@ -22,5 +22,7 @@ class AdaptiveNavigationModule : Module() {
         )
       }
     }
+
+    View(PaneGestureExclusionView::class) {}
   }
 }
