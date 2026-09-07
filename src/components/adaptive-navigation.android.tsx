@@ -4,6 +4,7 @@ import { Host } from '@expo/ui';
 
 import { Colors } from '@/constants/theme';
 import { AdaptiveNavigationContext } from '@/contexts/adaptive-navigation-context';
+import { EMPTY_WINDOW_FEATURES, PaneWindowContext } from '@/contexts/pane-window-context';
 import { useAppTabNavigation } from '@/hooks/use-app-tab-navigation';
 import type { AdaptiveNavigationProps } from '@/types/adaptive-navigation.types';
 import AdaptiveNavigationComposeView, {
@@ -17,34 +18,38 @@ export default function AdaptiveNavigation({ children }: AdaptiveNavigationProps
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
   const { selectedTab, selectTab } = useAppTabNavigation();
   const [navigationMode, setNavigationMode] = useState<NavigationMode>('bar');
+  const [windowFeatures, setWindowFeatures] = useState(EMPTY_WINDOW_FEATURES);
   const showRail = navigationMode === 'rail';
 
   return (
-    <AdaptiveNavigationContext.Provider value={showRail}>
-      <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <View
-          style={[styles.rail, { opacity: showRail ? 1 : 0 }]}
-          pointerEvents={showRail ? 'auto' : 'none'}
-          importantForAccessibility={showRail ? 'auto' : 'no-hide-descendants'}
-        >
-          <Host style={styles.host}>
-            <AdaptiveNavigationComposeView
-              selectedTab={selectedTab}
-              onTabPress={selectTab}
-              backgroundColor={colors.background}
-              contentColor={colors.text}
-              indicatorColor={colors.backgroundElement}
-              onNavigationModeChange={(mode) => {
-                setNavigationMode(mode);
-              }}
-            />
-          </Host>
+    <PaneWindowContext.Provider value={windowFeatures}>
+      <AdaptiveNavigationContext.Provider value={showRail}>
+        <View style={[styles.container, { backgroundColor: colors.background }]}>
+          <View
+            style={[styles.rail, { opacity: showRail ? 1 : 0 }]}
+            pointerEvents={showRail ? 'auto' : 'none'}
+            importantForAccessibility={showRail ? 'auto' : 'no-hide-descendants'}
+          >
+            <Host style={styles.host}>
+              <AdaptiveNavigationComposeView
+                selectedTab={selectedTab}
+                onTabPress={selectTab}
+                backgroundColor={colors.background}
+                contentColor={colors.text}
+                indicatorColor={colors.backgroundElement}
+                onWindowFeaturesChange={setWindowFeatures}
+                onNavigationModeChange={(mode) => {
+                  setNavigationMode(mode);
+                }}
+              />
+            </Host>
+          </View>
+          <View style={[styles.content, { marginLeft: showRail ? RAIL_WIDTH : 0 }]}>
+            {children(showRail)}
+          </View>
         </View>
-        <View style={[styles.content, { marginLeft: showRail ? RAIL_WIDTH : 0 }]}>
-          {children(showRail)}
-        </View>
-      </View>
-    </AdaptiveNavigationContext.Provider>
+      </AdaptiveNavigationContext.Provider>
+    </PaneWindowContext.Provider>
   );
 }
 

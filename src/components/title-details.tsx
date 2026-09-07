@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useTheme } from 'expo-router';
 
+import SaveTitleButton from '@/components/save-title-button';
 import { metadata, type Title } from '@/data/catalog';
 
 export default function TitleDetails({ title }: { title: Title }) {
@@ -12,6 +13,7 @@ export default function TitleDetails({ title }: { title: Title }) {
         <Text style={[styles.heroTitle, { color: colors.primary }]}>{title.title}</Text>
       </View>
       <Text style={[styles.title, { color: colors.text }]}>{title.title}</Text>
+      <SaveTitleButton id={title.id} />
       <Text style={{ color: colors.text }}>{metadata(title)}</Text>
       <Text style={{ color: colors.text }}>
         ★ {title.rating.toFixed(1)} · {title.genres.join(', ')}

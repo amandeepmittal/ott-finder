@@ -2,6 +2,18 @@ import { requireNativeView } from 'expo';
 
 export type NavigationMode = 'rail' | 'bar';
 
+export type WindowHinge = {
+  left: number;
+  top: number;
+  right: number;
+  bottom: number;
+};
+
+export type PaneWindowFeatures = {
+  verticalHinges: WindowHinge[];
+  hasHorizontalHinge: boolean;
+};
+
 export type AppTabName = '(shelf)' | 'search' | 'settings';
 
 export type AdaptiveNavigationComposeViewProps = {
@@ -10,14 +22,16 @@ export type AdaptiveNavigationComposeViewProps = {
   contentColor: string;
   indicatorColor: string;
   onNavigationModeChange: (mode: NavigationMode) => void;
+  onWindowFeaturesChange: (features: PaneWindowFeatures) => void;
   onTabPress: (name: AppTabName) => void;
 };
 
 type NativeProps = Omit<
   AdaptiveNavigationComposeViewProps,
-  'onTabPress' | 'onNavigationModeChange'
+  'onTabPress' | 'onNavigationModeChange' | 'onWindowFeaturesChange'
 > & {
   onNavigationModeChange: (event: { nativeEvent: { mode: NavigationMode } }) => void;
+  onWindowFeaturesChange: (event: { nativeEvent: PaneWindowFeatures }) => void;
   onTabPress: (event: { nativeEvent: { name: AppTabName } }) => void;
 };
 
@@ -29,6 +43,7 @@ const NativeRail = requireNativeView<NativeProps>(
 export default function AdaptiveNavigationComposeView({
   onTabPress,
   onNavigationModeChange,
+  onWindowFeaturesChange,
   ...props
 }: AdaptiveNavigationComposeViewProps) {
   return (
@@ -36,6 +51,7 @@ export default function AdaptiveNavigationComposeView({
       {...props}
       onTabPress={({ nativeEvent }) => onTabPress(nativeEvent.name)}
       onNavigationModeChange={({ nativeEvent }) => onNavigationModeChange(nativeEvent.mode)}
+      onWindowFeaturesChange={({ nativeEvent }) => onWindowFeaturesChange(nativeEvent)}
     />
   );
 }

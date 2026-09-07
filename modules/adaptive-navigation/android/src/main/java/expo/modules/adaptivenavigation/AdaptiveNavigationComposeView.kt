@@ -27,6 +27,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalDensity
 import expo.modules.kotlin.records.Field
 import expo.modules.kotlin.views.ComposeProps
 import expo.modules.kotlin.views.FunctionalComposableScope
@@ -55,7 +56,8 @@ private val destinations = listOf(
 fun FunctionalComposableScope.AdaptiveNavigationComposeViewContent(
   props: AdaptiveNavigationComposeViewProps,
   onTabPress: (String) -> Unit,
-  onNavigationModeChange: (String) -> Unit
+  onNavigationModeChange: (String) -> Unit,
+  onWindowFeaturesChange: (Map<String, Any>) -> Unit
 ) {
   val adaptiveInfo = currentWindowAdaptiveInfo()
   val suggestedType = NavigationSuiteScaffoldDefaults.navigationSuiteType(adaptiveInfo)
@@ -69,6 +71,31 @@ fun FunctionalComposableScope.AdaptiveNavigationComposeViewContent(
   // Send the initial mode, then send again only when the decision changes.
   LaunchedEffect(mode) {
     onNavigationModeChange(mode)
+  }
+
+  val posture = adaptiveInfo.windowPosture
+  val density = LocalDensity.current.density
+
+  LaunchedEffect(posture, density) {
+    val verticalHinges = posture.hingeList
+      .filter { it.isVertical && (it.isSeparating || it.isOccluding) }
+      .map { hinge ->
+        mapOf(
+          "left" to hinge.bounds.left / density,
+          "top" to hinge.bounds.top / density,
+          "right" to hinge.bounds.right / density,
+          "bottom" to hinge.bounds.bottom / density
+        )
+      }
+    val hasHorizontalHinge = posture.hingeList.any {
+      !it.isVertical && (it.isSeparating || it.isOccluding)
+    }
+    onWindowFeaturesChange(
+      mapOf(
+        "verticalHinges" to verticalHinges,
+        "hasHorizontalHinge" to hasHorizontalHinge
+      )
+    )
   }
 
   // React supplies the app's existing hex colors.

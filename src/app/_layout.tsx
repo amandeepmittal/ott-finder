@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import AppTabs from '@/components/app-tabs';
+import { ShelfProvider } from '@/contexts/shelf-context';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -11,8 +12,10 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
+      <ShelfProvider>
+        <AnimatedSplashOverlay />
+        <AppTabs />
+      </ShelfProvider>
     </ThemeProvider>
   );
 }
