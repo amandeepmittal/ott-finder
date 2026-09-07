@@ -7,6 +7,7 @@ export default function ShelfLayout() {
     <AdaptiveTabContent>
       <Stack>
         <Stack.Screen name="index" options={{ title: 'Shelf' }} />
+        <Stack.Screen name="[id]" options={{ title: 'Details' }} />
       </Stack>
     </AdaptiveTabContent>
   );
