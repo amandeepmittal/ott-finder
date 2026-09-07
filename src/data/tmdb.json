@@ -1,0 +1,611 @@
+{
+  "fetchedAt": "2026-09-06T09:18:38.429Z",
+  "source": "TMDB API v3",
+  "titles": [
+    {
+      "id": "movie:693134",
+      "tmdbId": 693134,
+      "mediaType": "movie",
+      "title": "Dune: Part Two",
+      "year": 2024,
+      "overview": "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
+      "tagline": "Long live the fighters.",
+      "runtime": 167,
+      "seasons": null,
+      "rating": 8.1,
+      "voteCount": 8500,
+      "genres": ["Science Fiction", "Adventure"],
+      "poster": "movie-693134-poster",
+      "backdrop": "movie-693134-backdrop",
+      "cast": [
+        {
+          "id": 1190668,
+          "name": "Timothée Chalamet",
+          "character": "Paul Atreides",
+          "portrait": "person-1190668"
+        },
+        {
+          "id": 505710,
+          "name": "Zendaya",
+          "character": "Chani",
+          "portrait": "person-505710"
+        },
+        {
+          "id": 933238,
+          "name": "Rebecca Ferguson",
+          "character": "Jessica",
+          "portrait": "person-933238"
+        },
+        {
+          "id": 3810,
+          "name": "Javier Bardem",
+          "character": "Stilgar",
+          "portrait": "person-3810"
+        },
+        {
+          "id": 16851,
+          "name": "Josh Brolin",
+          "character": "Gurney Halleck",
+          "portrait": "person-16851"
+        },
+        {
+          "id": 86654,
+          "name": "Austin Butler",
+          "character": "Feyd-Rautha",
+          "portrait": "person-86654"
+        }
+      ],
+      "source": "https://www.themoviedb.org/movie/693134"
+    },
+    {
+      "id": "tv:95396",
+      "tmdbId": 95396,
+      "mediaType": "tv",
+      "title": "Severance",
+      "year": 2022,
+      "overview": "Mark leads a team of office workers whose memories have been surgically divided between their work and personal lives. When a mysterious colleague appears outside of work, it begins a journey to discover the truth about their jobs.",
+      "tagline": "There's more to work than life.",
+      "runtime": null,
+      "seasons": 3,
+      "rating": 8.4,
+      "voteCount": 2923,
+      "genres": ["Drama", "Mystery", "Sci-Fi & Fantasy"],
+      "poster": "tv-95396-poster",
+      "backdrop": "tv-95396-backdrop",
+      "cast": [
+        {
+          "id": 36801,
+          "name": "Adam Scott",
+          "character": "Mark Scout",
+          "portrait": "person-36801"
+        },
+        {
+          "id": 973497,
+          "name": "Britt Lower",
+          "character": "Helly Riggs",
+          "portrait": "person-973497"
+        },
+        {
+          "id": 2028037,
+          "name": "Tramell Tillman",
+          "character": "Seth Milchick",
+          "portrait": "person-2028037"
+        },
+        {
+          "id": 1838225,
+          "name": "Zach Cherry",
+          "character": "Dylan George",
+          "portrait": "person-1838225"
+        },
+        {
+          "id": 1569165,
+          "name": "Jen Tullock",
+          "character": "Devon Scout-Hale",
+          "portrait": "person-1569165"
+        },
+        {
+          "id": 94797,
+          "name": "Dichen Lachman",
+          "character": "Ms. Casey",
+          "portrait": "person-94797"
+        }
+      ],
+      "source": "https://www.themoviedb.org/tv/95396"
+    },
+    {
+      "id": "movie:666277",
+      "tmdbId": 666277,
+      "mediaType": "movie",
+      "title": "Past Lives",
+      "year": 2023,
+      "overview": "After decades apart, childhood friends Nora and Hae Sung are reunited in New York for one fateful weekend as they confront notions of destiny, love, and the choices that make a life.",
+      "tagline": "",
+      "runtime": 106,
+      "seasons": null,
+      "rating": 7.7,
+      "voteCount": 2442,
+      "genres": ["Drama", "Romance"],
+      "poster": "movie-666277-poster",
+      "backdrop": "movie-666277-backdrop",
+      "cast": [
+        {
+          "id": 1260481,
+          "name": "Greta Lee",
+          "character": "Nora",
+          "portrait": "person-1260481"
+        },
+        {
+          "id": 1387126,
+          "name": "Teo Yoo",
+          "character": "Hae Sung",
+          "portrait": "person-1387126"
+        },
+        {
+          "id": 37154,
+          "name": "John Magaro",
+          "character": "Arthur",
+          "portrait": "person-37154"
+        },
+        {
+          "id": 2309873,
+          "name": "Moon Seung-ah",
+          "character": "Young Nora",
+          "portrait": "person-2309873"
+        },
+        {
+          "id": 3888559,
+          "name": "Leem Seung-min",
+          "character": "Young Hae Sung",
+          "portrait": "person-3888559"
+        },
+        {
+          "id": 109646,
+          "name": "Yoon Ji-hye",
+          "character": "Nora's Mom",
+          "portrait": "person-109646"
+        }
+      ],
+      "source": "https://www.themoviedb.org/movie/666277"
+    },
+    {
+      "id": "tv:83867",
+      "tmdbId": 83867,
+      "mediaType": "tv",
+      "title": "Andor",
+      "year": 2022,
+      "overview": "In an era filled with danger, deception and intrigue, Cassian Andor will discover the difference he can make in the struggle against the tyrannical Galactic Empire. He embarks on a path that is destined to turn him into a rebel hero.",
+      "tagline": "The Rebellion begins.",
+      "runtime": null,
+      "seasons": 2,
+      "rating": 8.3,
+      "voteCount": 2194,
+      "genres": ["Sci-Fi & Fantasy", "Action & Adventure", "Drama"],
+      "poster": "tv-83867-poster",
+      "backdrop": "tv-83867-backdrop",
+      "cast": [
+        {
+          "id": 8688,
+          "name": "Diego Luna",
+          "character": "Cassian Andor",
+          "portrait": "person-8688"
+        },
+        {
+          "id": 27397,
+          "name": "Anton Lesser",
+          "character": "Major Partagaz",
+          "portrait": "person-27397"
+        },
+        {
+          "id": 3709350,
+          "name": "Muhannad Bhaier",
+          "character": "Wilmon",
+          "portrait": "person-3709350"
+        },
+        {
+          "id": 1640,
+          "name": "Stellan Skarsgård",
+          "character": "Luthen Rael",
+          "portrait": "person-1640"
+        },
+        {
+          "id": 1182597,
+          "name": "Denise Gough",
+          "character": "Dedra Meero",
+          "portrait": "person-1182597"
+        },
+        {
+          "id": 1390505,
+          "name": "Kyle Soller",
+          "character": "Syril Karn",
+          "portrait": "person-1390505"
+        }
+      ],
+      "source": "https://www.themoviedb.org/tv/83867"
+    },
+    {
+      "id": "movie:1233413",
+      "tmdbId": 1233413,
+      "mediaType": "movie",
+      "title": "Sinners",
+      "year": 2025,
+      "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
+      "tagline": "Dance with the devil.",
+      "runtime": 138,
+      "seasons": null,
+      "rating": 7.5,
+      "voteCount": 5125,
+      "genres": ["Horror", "Action", "Thriller"],
+      "poster": "movie-1233413-poster",
+      "backdrop": "movie-1233413-backdrop",
+      "cast": [
+        {
+          "id": 135651,
+          "name": "Michael B. Jordan",
+          "character": "Smoke / Stack",
+          "portrait": "person-135651"
+        },
+        {
+          "id": 130640,
+          "name": "Hailee Steinfeld",
+          "character": "Mary",
+          "portrait": "person-130640"
+        },
+        {
+          "id": 4688032,
+          "name": "Miles Caton",
+          "character": "Sammie Moore",
+          "portrait": "person-4688032"
+        },
+        {
+          "id": 85065,
+          "name": "Jack O'Connell",
+          "character": "Remmick",
+          "portrait": "person-85065"
+        },
+        {
+          "id": 134774,
+          "name": "Wunmi Mosaku",
+          "character": "Annie",
+          "portrait": "person-134774"
+        },
+        {
+          "id": 2455272,
+          "name": "Jayme Lawson",
+          "character": "Pearline",
+          "portrait": "person-2455272"
+        }
+      ],
+      "source": "https://www.themoviedb.org/movie/1233413"
+    },
+    {
+      "id": "tv:136315",
+      "tmdbId": 136315,
+      "mediaType": "tv",
+      "title": "The Bear",
+      "year": 2022,
+      "overview": "Carmy, a young fine-dining chef, comes home to Chicago to run his family sandwich shop. As he fights to transform the shop and himself, he works alongside a rough-around-the-edges crew that ultimately reveal themselves as his chosen family.",
+      "tagline": "Back for seconds.",
+      "runtime": null,
+      "seasons": 5,
+      "rating": 8.1,
+      "voteCount": 1909,
+      "genres": ["Drama", "Comedy"],
+      "poster": "tv-136315-poster",
+      "backdrop": "tv-136315-backdrop",
+      "cast": [
+        {
+          "id": 206905,
+          "name": "Jeremy Allen White",
+          "character": "Carmen 'Carmy' Berzatto",
+          "portrait": "person-206905"
+        },
+        {
+          "id": 21042,
+          "name": "Ebon Moss-Bachrach",
+          "character": "Richard 'Richie' Jerimovich",
+          "portrait": "person-21042"
+        },
+        {
+          "id": 2195140,
+          "name": "Ayo Edebiri",
+          "character": "Sydney Adamu",
+          "portrait": "person-2195140"
+        },
+        {
+          "id": 2320708,
+          "name": "Lionel Boyce",
+          "character": "Marcus Brooks",
+          "portrait": "person-2320708"
+        },
+        {
+          "id": 1240486,
+          "name": "Abby Elliott",
+          "character": "Natalie 'Sugar' Berzatto",
+          "portrait": "person-1240486"
+        },
+        {
+          "id": 1646864,
+          "name": "Matty Matheson",
+          "character": "Neil Fak",
+          "portrait": "person-1646864"
+        }
+      ],
+      "source": "https://www.themoviedb.org/tv/136315"
+    },
+    {
+      "id": "movie:329865",
+      "tmdbId": 329865,
+      "mediaType": "movie",
+      "title": "Arrival",
+      "year": 2016,
+      "overview": "Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.",
+      "tagline": "Why are they here?",
+      "runtime": 116,
+      "seasons": null,
+      "rating": 7.6,
+      "voteCount": 19804,
+      "genres": ["Drama", "Science Fiction", "Mystery"],
+      "poster": "movie-329865-poster",
+      "backdrop": "movie-329865-backdrop",
+      "cast": [
+        {
+          "id": 9273,
+          "name": "Amy Adams",
+          "character": "Louise Banks",
+          "portrait": "person-9273"
+        },
+        {
+          "id": 17604,
+          "name": "Jeremy Renner",
+          "character": "Ian Donnelly",
+          "portrait": "person-17604"
+        },
+        {
+          "id": 2178,
+          "name": "Forest Whitaker",
+          "character": "Colonel Weber",
+          "portrait": "person-2178"
+        },
+        {
+          "id": 72873,
+          "name": "Michael Stuhlbarg",
+          "character": "Agent Halpern",
+          "portrait": "person-72873"
+        },
+        {
+          "id": 225411,
+          "name": "Mark O'Brien",
+          "character": "Captain Marks",
+          "portrait": "person-225411"
+        },
+        {
+          "id": 21629,
+          "name": "Tzi Ma",
+          "character": "General Shang",
+          "portrait": "person-21629"
+        }
+      ],
+      "source": "https://www.themoviedb.org/movie/329865"
+    },
+    {
+      "id": "movie:1163194",
+      "tmdbId": 1163194,
+      "mediaType": "movie",
+      "title": "Lost Ladies",
+      "year": 2024,
+      "overview": "In 2001, somewhere in rural India, two young brides get accidentally swapped on a train. In the ensuing chaos, they both encounter a host of colourful characters, resulting in hilarious and unexpected consequences.",
+      "tagline": "Sometimes you have to lose your way to find yourself.",
+      "runtime": 123,
+      "seasons": null,
+      "rating": 7.8,
+      "voteCount": 174,
+      "genres": ["Comedy", "Drama", "Romance"],
+      "poster": "movie-1163194-poster",
+      "backdrop": "movie-1163194-backdrop",
+      "cast": [
+        {
+          "id": 3021361,
+          "name": "Nitanshi Goel",
+          "character": "Phool",
+          "portrait": "person-3021361"
+        },
+        {
+          "id": 2550663,
+          "name": "Pratibha Ranta",
+          "character": "Jaya",
+          "portrait": "person-2550663"
+        },
+        {
+          "id": 2505976,
+          "name": "Sparsh Shrivastava",
+          "character": "Deepak Kumar",
+          "portrait": "person-2505976"
+        },
+        {
+          "id": 85882,
+          "name": "Ravi Kishan",
+          "character": "Sub-Inspector Shyam Manohar",
+          "portrait": "person-85882"
+        },
+        {
+          "id": 1550351,
+          "name": "Chhaya Kadam",
+          "character": "Manju Maai",
+          "portrait": "person-1550351"
+        },
+        {
+          "id": 1197127,
+          "name": "Geeta Agrawal Sharma",
+          "character": "Yasoda",
+          "portrait": "person-1197127"
+        }
+      ],
+      "source": "https://www.themoviedb.org/movie/1163194"
+    },
+    {
+      "id": "movie:569094",
+      "tmdbId": 569094,
+      "mediaType": "movie",
+      "title": "Spider-Man: Across the Spider-Verse",
+      "year": 2023,
+      "overview": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse's very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
+      "tagline": "It's how you wear the mask that matters.",
+      "runtime": 140,
+      "seasons": null,
+      "rating": 8.3,
+      "voteCount": 9179,
+      "genres": ["Animation", "Action", "Adventure", "Science Fiction"],
+      "poster": "movie-569094-poster",
+      "backdrop": "movie-569094-backdrop",
+      "cast": [
+        {
+          "id": 587506,
+          "name": "Shameik Moore",
+          "character": "Miles Morales (voice)",
+          "portrait": "person-587506"
+        },
+        {
+          "id": 130640,
+          "name": "Hailee Steinfeld",
+          "character": "Gwen Stacy (voice)",
+          "portrait": "person-130640"
+        },
+        {
+          "id": 226366,
+          "name": "Brian Tyree Henry",
+          "character": "Jeff Morales (voice)",
+          "portrait": "person-226366"
+        },
+        {
+          "id": 141610,
+          "name": "Luna Lauren Vélez",
+          "character": "Rio Morales (voice)",
+          "portrait": "person-141610"
+        },
+        {
+          "id": 543505,
+          "name": "Jake Johnson",
+          "character": "Peter B. Parker (voice)",
+          "portrait": "person-543505"
+        },
+        {
+          "id": 25072,
+          "name": "Oscar Isaac",
+          "character": "Miguel O'Hara (voice)",
+          "portrait": "person-25072"
+        }
+      ],
+      "source": "https://www.themoviedb.org/movie/569094"
+    },
+    {
+      "id": "tv:126308",
+      "tmdbId": 126308,
+      "mediaType": "tv",
+      "title": "Shōgun",
+      "year": 2024,
+      "overview": "In Japan in the year 1600, at the dawn of a century-defining civil war, Lord Yoshii Toranaga is fighting for his life as his enemies on the Council of Regents unite against him, when a mysterious European ship is found marooned in a nearby fishing village.",
+      "tagline": "An epic saga of war, passion, and power set in Feudal Japan.",
+      "runtime": null,
+      "seasons": 1,
+      "rating": 8.4,
+      "voteCount": 1881,
+      "genres": ["Drama", "War & Politics"],
+      "poster": "tv-126308-poster",
+      "backdrop": "tv-126308-backdrop",
+      "cast": [
+        {
+          "id": 9195,
+          "name": "Hiroyuki Sanada",
+          "character": "Yoshii Toranaga",
+          "portrait": "person-9195"
+        },
+        {
+          "id": 1363054,
+          "name": "Cosmo Jarvis",
+          "character": "John Blackthorne",
+          "portrait": "person-1363054"
+        },
+        {
+          "id": 1434487,
+          "name": "Anna Sawai",
+          "character": "Toda Mariko",
+          "portrait": "person-1434487"
+        },
+        {
+          "id": 13275,
+          "name": "Tadanobu Asano",
+          "character": "Kashigi Yabushige",
+          "portrait": "person-13275"
+        },
+        {
+          "id": 1082509,
+          "name": "Takehiro Hira",
+          "character": "Ishido Kazunari",
+          "portrait": "person-1082509"
+        },
+        {
+          "id": 73358,
+          "name": "Tommy Bastow",
+          "character": "Father Martin Alvito",
+          "portrait": "person-73358"
+        }
+      ],
+      "source": "https://www.themoviedb.org/tv/126308"
+    },
+    {
+      "id": "movie:335984",
+      "tmdbId": 335984,
+      "mediaType": "movie",
+      "title": "Blade Runner 2049",
+      "year": 2017,
+      "overview": "Thirty years after the events of the first film, a new blade runner, LAPD Officer K, unearths a long-buried secret that has the potential to plunge what's left of society into chaos. K's discovery leads him on a quest to find Rick Deckard, a former LAPD blade runner who has been missing for 30 years.",
+      "tagline": "The key to the future is finally unearthed.",
+      "runtime": 164,
+      "seasons": null,
+      "rating": 7.6,
+      "voteCount": 15613,
+      "genres": ["Science Fiction", "Drama"],
+      "poster": "movie-335984-poster",
+      "backdrop": "movie-335984-backdrop",
+      "cast": [
+        {
+          "id": 30614,
+          "name": "Ryan Gosling",
+          "character": "'K'",
+          "portrait": "person-30614"
+        },
+        {
+          "id": 3,
+          "name": "Harrison Ford",
+          "character": "Rick Deckard",
+          "portrait": "person-3"
+        },
+        {
+          "id": 224513,
+          "name": "Ana de Armas",
+          "character": "Joi",
+          "portrait": "person-224513"
+        },
+        {
+          "id": 543530,
+          "name": "Dave Bautista",
+          "character": "Sapper Morton",
+          "portrait": "person-543530"
+        },
+        {
+          "id": 32,
+          "name": "Robin Wright",
+          "character": "Lieutenant Joshi",
+          "portrait": "person-32"
+        },
+        {
+          "id": 104632,
+          "name": "Sylvia Hoeks",
+          "character": "Luv",
+          "portrait": "person-104632"
+        }
+      ],
+      "source": "https://www.themoviedb.org/movie/335984"
+    }
+  ]
+}

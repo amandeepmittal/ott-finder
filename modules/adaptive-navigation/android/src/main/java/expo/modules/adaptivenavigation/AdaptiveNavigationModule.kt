@@ -11,14 +11,18 @@ class AdaptiveNavigationModule : Module() {
     ExpoUIView<AdaptiveNavigationComposeViewProps>("AdaptiveNavigationComposeView") {
       val onTabPress by Event<Map<String, String>>()
       val onNavigationModeChange by Event<Map<String, String>>()
+      val onWindowFeaturesChange by Event<Map<String, Any>>()
 
       Content { props ->
         AdaptiveNavigationComposeViewContent(
           props,
           onTabPress = { name -> onTabPress(mapOf("name" to name)) },
-          onNavigationModeChange = { mode -> onNavigationModeChange(mapOf("mode" to mode)) }
+          onNavigationModeChange = { mode -> onNavigationModeChange(mapOf("mode" to mode)) },
+          onWindowFeaturesChange = { features -> onWindowFeaturesChange(features) }
         )
       }
     }
+
+    View(PaneGestureExclusionView::class) {}
   }
 }
